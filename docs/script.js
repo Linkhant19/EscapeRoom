@@ -6,34 +6,80 @@ function startDrag() {
     circle.style.transition = "none";  // I can add transition styles here if I want.
 }
 
+function getColorFromPosition(x, y) {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    if (x < width / 2 && y < height / 2) {
+        return 'red';
+    } else if (x > width / 2 && y < height / 2) {
+        return 'green';
+    } else if (x < width / 2 && y > height / 2) {
+        return 'blue';
+    } else {
+        return 'yellow';
+    }
+}
+
 function drag(event) {
     if (!isDragging) return;
 
     const x = event.clientX || event.touches[0].clientX;
     const y = event.clientY || event.touches[0].clientY;
-    
-    const width = window.innerWidth;
-    const height = window.innerHeight;
 
-    // // I am trying to move the circle based with coordinates
     circle.style.left = x + 'px';
     circle.style.top = y + 'px';
+    circle.style.backgroundColor = getColorFromPosition(x, y);
+}
 
-    //  // I am changing color based on quadrant
-    if (x < width / 2 && y < height / 2) {
-        circle.style.backgroundColor = 'red'; // top left
-    } else if (x > width / 2 && y < height / 2) {
-        circle.style.backgroundColor = 'green'; // top right
-    } else if (x < width / 2 && y > height / 2) {
-        circle.style.backgroundColor = 'blue'; // bottom left
+function endDrag(event) {
+    isDragging = false;
+    circle.style.transition = "background-color 0.5s";  
+
+    const x = event.clientX || event.changedTouches[0].clientX;
+    const y = event.clientY || event.changedTouches[0].clientY;
+    const currentColor = getColorFromPosition(x, y);
+
+    if (currentColor === colorOrder[currentIndex]) {
+        currentIndex++;
+        if (currentIndex === colorOrder.length) {
+            window.location.href = "next.html";
+        }
     } else {
-        circle.style.backgroundColor = 'yellow'; // bottom right
+        flashRed();
+        currentIndex = 0; 
     }
 }
 
-function endDrag() {
+
+function endDrag(event) {
     isDragging = false;
     circle.style.transition = "background-color 0.5s";  
+
+    const x = event.clientX || event.changedTouches[0].clientX;
+    const y = event.clientY || event.changedTouches[0].clientY;
+    const currentColor = getColorFromPosition(x, y);
+
+    if (currentColor === colorOrder[currentIndex]) {
+        currentIndex++;
+        if (currentIndex === colorOrder.length) {
+            window.location.href = "next.html";
+        }
+    } else {
+        flashRed();
+        currentIndex = 0; 
+    }
+}
+
+
+let colorOrder = ['red', 'green', 'red', 'blue', 'yellow', 'green'];
+let currentIndex = 0;
+
+function flashRed() {
+    document.body.style.backgroundColor = 'red';
+    setTimeout(() => {
+        document.body.style.backgroundColor = '';
+    }, 500);
 }
 
 // These are my mouse events
