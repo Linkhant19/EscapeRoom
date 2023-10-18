@@ -84,13 +84,15 @@ function updateDisplay() {
 
 const countdownInterval = setInterval(() => {
     countdown -= updateInterval;
-    updateDisplay();
     
+    updateDisplay();
+    updateBackgroundColor(); //I am trying to gradually change background color here.
     if (countdown <= 0) {
         clearInterval(countdownInterval);
         window.location.href = "next.html";
     }
 }, updateInterval);
+
 
 updateDisplay();
 
@@ -103,6 +105,18 @@ function flashRed() {
         document.body.style.backgroundColor = '';
     }, 500);
 }
+
+function updateBackgroundColor() {
+    const percentageLeft = countdown / (30 * 1000);
+    
+    const colorValue = Math.floor(percentageLeft * 255);
+
+    document.body.style.backgroundColor = `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+}
+
+
+document.body.style.backgroundColor = "rgb(255, 255, 255)";
+
 
 // These are my mouse events
 circle.addEventListener('mousedown', startDrag);
