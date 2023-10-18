@@ -6,8 +6,8 @@
     <title>Interactive Circle</title>
     <style>
         #draggableCircle {
-            width: 100px;
-            height: 100px;
+            width: 40px;
+            height: 40px;
             background-color: grey;
             border-radius: 50%;
             position: absolute;
@@ -20,8 +20,11 @@
 </head>
 <body>
     <div id="draggableCircle" draggable="true"></div>
-    <div id="colorSequence" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <!-- <div id="colorSequence" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
         Red. Green. Red. Blue. Yellow. Green.
+    </div> -->
+    <div id="timer" style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); font-size: 2rem;">
+        30.000
     </div>
     <script src="script.js"></script>
 </body>

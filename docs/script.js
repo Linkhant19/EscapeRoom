@@ -72,6 +72,28 @@ function endDrag(event) {
 }
 
 
+let countdown = 30 * 1000; 
+const timerElement = document.getElementById('timer');
+const updateInterval = 10;  
+
+function updateDisplay() {
+    const seconds = Math.floor(countdown / 1000);
+    const milliseconds = countdown % 1000;
+    timerElement.textContent = seconds + '.' + String(milliseconds).padStart(3, '0');
+}
+
+const countdownInterval = setInterval(() => {
+    countdown -= updateInterval;
+    updateDisplay();
+    
+    if (countdown <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = "next.html";
+    }
+}, updateInterval);
+
+updateDisplay();
+
 let colorOrder = ['red', 'green', 'red', 'blue', 'yellow', 'green'];
 let currentIndex = 0;
 
