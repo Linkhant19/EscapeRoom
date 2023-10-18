@@ -32,44 +32,44 @@ function drag(event) {
     circle.style.backgroundColor = getColorFromPosition(x, y);
 }
 
-function endDrag(event) {
-    isDragging = false;
-    circle.style.transition = "background-color 0.5s";  
+// function endDrag(event) {
+//     isDragging = false;
+//     circle.style.transition = "background-color 0.5s";  
 
-    const x = event.clientX || event.changedTouches[0].clientX;
-    const y = event.clientY || event.changedTouches[0].clientY;
-    const currentColor = getColorFromPosition(x, y);
+//     const x = event.clientX || event.changedTouches[0].clientX;
+//     const y = event.clientY || event.changedTouches[0].clientY;
+//     const currentColor = getColorFromPosition(x, y);
 
-    if (currentColor === colorOrder[currentIndex]) {
-        currentIndex++;
-        if (currentIndex === colorOrder.length) {
-            window.location.href = "next.html";
-        }
-    } else {
-        flashRed();
-        currentIndex = 0; 
-    }
-}
+//     if (currentColor === colorOrder[currentIndex]) {
+//         currentIndex++;
+//         if (currentIndex === colorOrder.length) {
+//             window.location.href = "next.html";
+//         }
+//     } else {
+//         flashRed();
+//         currentIndex = 0; 
+//     }
+// }
 
 
-function endDrag(event) {
-    isDragging = false;
-    circle.style.transition = "background-color 0.5s";  
+// function endDrag(event) {
+//     isDragging = false;
+//     circle.style.transition = "background-color 0.5s";  
 
-    const x = event.clientX || event.changedTouches[0].clientX;
-    const y = event.clientY || event.changedTouches[0].clientY;
-    const currentColor = getColorFromPosition(x, y);
+//     const x = event.clientX || event.changedTouches[0].clientX;
+//     const y = event.clientY || event.changedTouches[0].clientY;
+//     const currentColor = getColorFromPosition(x, y);
 
-    if (currentColor === colorOrder[currentIndex]) {
-        currentIndex++;
-        if (currentIndex === colorOrder.length) {
-            window.location.href = "next.html";
-        }
-    } else {
-        flashRed();
-        currentIndex = 0; 
-    }
-}
+//     if (currentColor === colorOrder[currentIndex]) {
+//         currentIndex++;
+//         if (currentIndex === colorOrder.length) {
+//             window.location.href = "next.html";
+//         }
+//     } else {
+//         flashRed();
+//         currentIndex = 0; 
+//     }
+// }
 
 
 let countdown = 30 * 1000; 
@@ -99,12 +99,12 @@ updateDisplay();
 let colorOrder = ['red', 'green', 'red', 'blue', 'yellow', 'green'];
 let currentIndex = 0;
 
-function flashRed() {
-    document.body.style.backgroundColor = 'red';
-    setTimeout(() => {
-        document.body.style.backgroundColor = '';
-    }, 500);
-}
+// function flashRed() {
+//     document.body.style.backgroundColor = 'red';
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = '';
+//     }, 500);
+// }
 
 function updateBackgroundColor() {
     const percentageLeft = countdown / (30 * 1000);
