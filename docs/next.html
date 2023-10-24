@@ -40,6 +40,30 @@
             }
         }
 
+        @keyframes shoot {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            30% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(100vw, 100vh);
+                opacity: 0;
+            }
+        }
+
+        .shooting-star {
+            position: absolute;
+            background-color: white;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: shoot 3s infinite;
+        }
+
+
 
         .displayed-text {
             font-family: 'Dancing Script', cursive;
@@ -71,60 +95,7 @@
         <div class="displayed-text">now we are here under the night sky.</div>
     </div>
     
-    
-
-
-    <script>
-
-        const numStars = 100;
-
-        for (let i = 0; i < numStars; i++) {
-            let star = document.createElement('div');
-            star.className = 'star';
-
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.top = Math.random() * 100 + 'vh';
-
-            star.style.width = Math.random() * 5 + 'px';
-            star.style.height = star.style.width;
-
-            star.style.animationDelay = Math.random() * 2 + 's';
-            star.style.animationDuration = (Math.random() * 3 + 1) + 's';
-            document.body.appendChild(star);
-        }
-
-        const texts = [
-            "now we are here under the night sky.",
-            "thanks for your interest in us.",
-            "now we welcome you to...",
-            "sgn inc.",
-
-        ];
-
-        let currentTextIndex = 0;  
-
-        document.body.addEventListener('click', function() {
-            const textDiv = document.querySelector('.displayed-text');
-
-    
-            textDiv.style.animation = "fadeOut 3s forwards";
-
-            setTimeout(function() {
-                currentTextIndex++;
-        
-    
-                if (currentTextIndex >= texts.length) {
-                    currentTextIndex = 0;  //This will change to link to another page later. 
-                }
-
-                textDiv.textContent = texts[currentTextIndex];
-                textDiv.style.display = "block"; 
-                textDiv.style.animation = "fadeIn 3s forwards";  
-            }, 1000);
-        });
-
-
-    </script>
+    <script src="script1.js"></script>
 
 </body>
 
