@@ -41,20 +41,14 @@
         }
 
 
-        .centered-text {
+        .displayed-text {
             font-family: 'Dancing Script', cursive;
-            font-size: 1.5em; 
+            font-size: 1.5em;
             color: white;
             opacity: 0;
             animation: fadeIn 3s forwards;
         }
 
-        .second-text {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5em;
-            color: white;
-            opacity: 0;
-        }
 
 
         @keyframes fadeIn {
@@ -74,9 +68,9 @@
 
 <body>
     <div class="text-container">
-        <div class="centered-text">now we are here under the night sky.</div>
-        <div class="second-text">thanks for your interest in us.</div>
+        <div class="displayed-text">now we are here under the night sky.</div>
     </div>
+    
     
 
 
@@ -99,20 +93,36 @@
             document.body.appendChild(star);
         }
 
+        const texts = [
+            "now we are here under the night sky.",
+            "thanks for your interest in us.",
+            "now we welcome you to...",
+            "sgn inc.",
+
+        ];
+
+        let currentTextIndex = 0;  
+
         document.body.addEventListener('click', function() {
-            const firstText = document.querySelector('.centered-text');
-            const secondText = document.querySelector('.second-text');
+            const textDiv = document.querySelector('.displayed-text');
 
-            if (window.getComputedStyle(firstText).opacity !== '0') {
-                firstText.style.animation = "fadeOut 1s forwards"
+    
+            textDiv.style.animation = "fadeOut 3s forwards";
 
+            setTimeout(function() {
+                currentTextIndex++;
+        
+    
+                if (currentTextIndex >= texts.length) {
+                    currentTextIndex = 0;  //This will change to link to another page later. 
+                }
 
-                setTimeout(function() {
-                    firstText.style.display = "none";  
-                    secondText.style.animation = "fadeIn 3s forwards";
-                }, 1000);
-            }
+                textDiv.textContent = texts[currentTextIndex];
+                textDiv.style.display = "block"; 
+                textDiv.style.animation = "fadeIn 3s forwards";  
+            }, 1000);
         });
+
 
     </script>
 
