@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            font-family: 'Roboto Mono', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ee7752);
+            background-size: 400% 400%;
+            animation: gradient 15s infinite;
+        }
+        
+        .content {
+            background: transparent; 
+            padding: 20px 40px;
+            border: 3px solid #00f3ff; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff, 0 0 30px #00f3ff; 
+        }
+        
+        .robot-text {
+            color: #eee;
+            font-size: 1.0em;
+            position: relative;
+            text-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff, 0 0 15px #00f3ff;
+        }
+        
+        .robot-text::before {
+            content: '>';
+            position: absolute;
+            left: -1.5em;
+            color: #0f0; 
+            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+        }
+        
+        .highlight {
+            color: #0f0; 
+        }
+
+        .robot-text::after {
+            content: '|';
+            animation: blink 1s infinite;
+            position: absolute;
+            right: -0.5em;
+            color: #0f0;
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <div class="content">
+        <p class="robot-text">First, let's test if you are <span class="highlight">smart</span> enough.</p>
+    </div>
+</body>
+
+</html>
