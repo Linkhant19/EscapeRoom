@@ -62,5 +62,18 @@ function generateShootingStar() {
     }, parseFloat(duration) * 1000);
 }
 
+function randomGlitch() {
+    if (Math.random() < 0.05) {  // 5% chance
+        document.body.classList.add('glitch');
+
+        setTimeout(() => {
+            document.body.classList.remove('glitch');
+        }, 200);  // remove the glitch after 200ms
+    }
+}
+
+setInterval(randomGlitch, 1000);  // Check for a glitch every second
+
+
 setInterval(generateShootingStar, 5000); 
 setInterval(generateShootingStar, 2000); 
