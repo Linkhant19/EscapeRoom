@@ -12,11 +12,17 @@
             overflow: hidden;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
         }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
 
         .star {
             position: absolute;
@@ -43,16 +49,36 @@
             animation: fadeIn 3s forwards;
         }
 
+        .second-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: white;
+            opacity: 0;
+        }
+
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
             }
         }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="centered-text">now we are here under the night sky.</div>
+    <div class="text-container">
+        <div class="centered-text">now we are here under the night sky.</div>
+        <div class="second-text">thanks for your interest in us.</div>
+    </div>
+    
+
 
     <script>
 
@@ -72,6 +98,22 @@
             star.style.animationDuration = (Math.random() * 3 + 1) + 's';
             document.body.appendChild(star);
         }
+
+        document.body.addEventListener('click', function() {
+            const firstText = document.querySelector('.centered-text');
+            const secondText = document.querySelector('.second-text');
+
+            if (window.getComputedStyle(firstText).opacity !== '0') {
+                firstText.style.animation = "fadeOut 1s forwards"
+
+
+                setTimeout(function() {
+                    firstText.style.display = "none";  
+                    secondText.style.animation = "fadeIn 3s forwards";
+                }, 1000);
+            }
+        });
+
     </script>
 
 </body>
