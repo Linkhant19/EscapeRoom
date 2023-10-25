@@ -1,5 +1,5 @@
 function goToNextPage() {
-    window.location.href = "index.html";  
+    window.location.href = "blinds.html";  
 }
 
 const typewriterText = document.querySelector('.typewriter-text');
