@@ -8,17 +8,18 @@
     <title>Robot Test: Number Game</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        
+
         body {
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column; 
         }
         
         .bg {
@@ -183,10 +184,49 @@
             transition: 850ms;
         }
 
+        .riddle-container {
+            margin-top: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+
+        .btn:hover + .riddle-container {
+            opacity: 1;
+        }
+
+        .riddle {
+            font-size: 16px; 
+            color: #333;     
+        }
+
+        .answer-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        .submit-btn {
+            margin-top: 8px;
+            padding: 6px 12px;
+            background-color: #63a4ff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .feedback {
+            color: red;
+            margin-top: 8px;
+        }
+
 </style>
 </head>
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<div class="main-container">
 <div class="btn">
   <div class="bg"></div>
   <span class="noselect">Close the blinds</span>
@@ -208,6 +248,16 @@
   <div class="blind" id="b14"></div>
   <div class="blind" id="b15"></div>
   <div class="blind" id="b16"></div>
+  
 </div>
 
+<div class="riddle-container">
+    <p class="riddle">I am as light as a dream, and as high as the sky. I cry to a stream and change with the time. What am I?</p>
+    <input type="text" class="answer-input" id="answer-input" placeholder="Type your answer here">
+    <button class="submit-btn" onclick="checkAnswer()">Submit</button>
+    <p class="feedback" id="feedback"></p>
+</div>
+</div>
+
+<script src = "blinds.js"></script>
 </html>
