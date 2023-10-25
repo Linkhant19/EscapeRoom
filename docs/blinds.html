@@ -10,8 +10,10 @@
     <style>
         .main-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh;
         }
 
         body {
@@ -46,6 +48,7 @@
             cursor: pointer;
             background-color: #63a4ff;
             background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+            margin-bottom: 30px;
         }
         
         .blind {
@@ -192,13 +195,13 @@
         }
 
 
-        .btn:hover + .riddle-container {
+        .btn:hover ~ .riddle-container {
             opacity: 1;
         }
 
         .riddle {
             font-size: 16px; 
-            color: #333;     
+            color: #ccc;     
         }
 
         .answer-input {
@@ -221,6 +224,11 @@
         .feedback {
             color: red;
             margin-top: 8px;
+        }
+
+        .input-container {
+            text-align: center;
+            margin-top: 10px;
         }
 
 </style>
@@ -250,12 +258,16 @@
   <div class="blind" id="b16"></div>
   
 </div>
-
-<div class="riddle-container">
-    <p class="riddle">I am as light as a dream, and as high as the sky. I cry to a stream and change with the time. What am I?</p>
+<div class="input-container">
     <input type="text" class="answer-input" id="answer-input" placeholder="Type your answer here">
     <button class="submit-btn" onclick="checkAnswer()">Submit</button>
     <p class="feedback" id="feedback"></p>
+</div>
+<div class="riddle-container">
+    <div class="riddle-text">
+        <p class="riddle">I am as light as a dream, and as high as the sky. I cry to a stream and change with the time. What am I?</p>
+    </div>
+    
 </div>
 </div>
 
