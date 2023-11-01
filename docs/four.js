@@ -17,6 +17,18 @@
 //     }
 // }
 
+let typingTimer;
+let index = 0;
+const text = "725 Commonwealth Avenue, Boston, MA";
+
+function typeText() {
+    if (index < text.length) {
+        document.getElementById('typedOutput').textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 200); 
+    }
+}
+
 function checkAnswer() {
     const firstDigit = document.getElementById('firstDigit').value;
     const secondDigit = document.getElementById('secondDigit').value;
@@ -30,9 +42,9 @@ function checkAnswer() {
     let feedbackFontSize = "";
 
     if (enteredNumber === 725) {
-        feedbackText = "Correct!";
-        feedbackColor = "#0f0";
-        feedbackFontSize = "1em";
+        document.getElementById('typedOutput').style.width = "500px"; 
+        typeText();
+        return;
     } else if (enteredNumber > 725) {
         feedbackText = "Lower!";
         feedbackColor = "#ff5555";

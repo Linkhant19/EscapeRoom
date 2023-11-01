@@ -70,6 +70,18 @@
             color: #ff5555;
         }
 
+        .typed-output {
+            font-size: 1.2em;
+            color: #eee;
+            border-left: 4px solid #00f3ff;
+            padding-left: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            transition: width 0.3s;
+        }
+
+
 
 
         @keyframes gradient {
@@ -96,6 +108,7 @@
         </div>
         <button class="submit-btn" onclick="checkAnswer()">Submit</button>
         <p id="feedback"></p>
+        <p class="typed-output" id="typedOutput"></p>
     </div>    
     <script src="four.js"></script>
 </body>
