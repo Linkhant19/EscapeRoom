@@ -50,7 +50,7 @@ function checkAnswer() {
     if (enteredNumber === 725) {
         document.getElementById('typedOutput').style.width = "500px"; 
         typeText('typedOutput', text1, function() {
-            document.getElementById('meetOutput').style.width = "500px"; // adjust as needed
+            document.getElementById('meetOutput').style.width = "500px"; 
             typeText('meetOutput', text2);
         });
         // typeText();
