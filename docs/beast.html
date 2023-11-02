@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secret Lab File: The Beast in the Hallway</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
         @keyframes pulse {
             0% {
@@ -40,6 +41,12 @@
             padding: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             transform: translateY(0);
+            
+            background-image: url('torn.png');  
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            position: relative;
             opacity: 0;
             animation: fadeIn 2s forwards 1s;
         }
@@ -50,9 +57,41 @@
             }
         }
 
+        /* @keyframes slideIn {
+            to {
+                left: 0;
+            }
+        } */
+
+        /* @keyframes combinedAnimation {
+            0% {
+                opacity: 0;
+                left: 100%; 
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+                left: 0;
+            }
+        } */
+
         .content:hover {
             transform: translateY(-10px) rotate(-1deg);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px 5px rgba(255, 255, 0, 0.2);
+        }
+
+        .content:active {
+            transform: translateY(5px) rotate(-1deg); 
+        }
+
+        .paperclip {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 40px;
+            color: #555;
         }
 
         h1, h2 {
@@ -83,6 +122,7 @@
     <div class="watermark">CONFIDENTIAL</div>
 
     <div class="content">
+        <i class="fas fa-paperclip paperclip"></i>
         <h1>Secret Lab Incident Report</h1>
         <h2>Introduction</h2>
         <p>This file contains a detailed report...</p>
