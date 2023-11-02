@@ -31,6 +31,8 @@
             height: 100vh;
             padding: 0;
             margin: 0;
+            animation: subtleMove 5s infinite;
+            background-image: url('noise.png'), linear-gradient(45deg, #4d3930, #211b11, #344a72);
         }
 
         .content {
@@ -54,6 +56,15 @@
         @keyframes fadeIn {
             to {
                 opacity: 1;
+            }
+        }
+
+        @keyframes subtleMove {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
             }
         }
 
