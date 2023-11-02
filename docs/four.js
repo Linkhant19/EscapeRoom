@@ -19,13 +19,19 @@
 
 let typingTimer;
 let index = 0;
-const text = "725 Commonwealth Avenue, Boston, MA";
+const text1 = "725 Commonwealth Avenue, Boston, MA";
+const text2 = "That is where we will meet.";
 
-function typeText() {
-    if (index < text.length) {
-        document.getElementById('typedOutput').textContent += text.charAt(index);
+function typeText(targetElementId, message, callback) {
+    const targetElement = document.getElementById(targetElementId);
+
+    if (index < message.length) {
+        targetElement.textContent += message.charAt(index);
         index++;
-        setTimeout(typeText, 200); 
+        setTimeout(() => typeText(targetElementId, message, callback), 200);
+    } else {
+        index = 0;
+        if (callback) callback();
     }
 }
 
@@ -43,7 +49,11 @@ function checkAnswer() {
 
     if (enteredNumber === 725) {
         document.getElementById('typedOutput').style.width = "500px"; 
-        typeText();
+        typeText('typedOutput', text1, function() {
+            document.getElementById('meetOutput').style.width = "500px"; // adjust as needed
+            typeText('meetOutput', text2);
+        });
+        // typeText();
         return;
     } else if (enteredNumber > 725) {
         feedbackText = "Lower!";
