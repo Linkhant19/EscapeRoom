@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butterflies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
         :root {
             --background: #defff4;
@@ -66,6 +67,17 @@
 
         #yellowGrass6 {
             transform: translate(7000%, 9000%);
+        }
+
+        #countdown {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+            font-size: 48px;
+            font-family: 'Lobster', cursive; 
+            z-index: 1000; 
         }
 
         .flying {
@@ -239,9 +251,7 @@
         <div class="flyingPink" id="butterflyRed1"></div>
         <div class="flyingPink" id="butterflyRed2"></div>
         <div class="flyingPink" id="butterflyRed3"></div>
-        <div id="countdown" style="position: fixed; top: 20px; left: 20px; color: red; font-size: 24px;">
-            3
-          </div>
+        <div class="countdown" id="countdown" ></div>
     </div>
     <script src="butterfly.js"></script>
     </body>
