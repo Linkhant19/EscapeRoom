@@ -1,5 +1,5 @@
 var maxTime = 50;
-var maxTimePink = 40;
+var maxTimePink = 60;
 var butterflies = document.getElementsByTagName("body")[0];
 var singleButterfly = document.getElementById("butterfly");
 var pinkButterfly = document.getElementById("butterflyPink");
@@ -12,6 +12,23 @@ var height = w.innerHeight || e.clientHeight || g.clientHeight;
 var initialTop = butterflies.clientHeight * -1;
 var butterflyCount = 300;
 var pinkButterflyCount = 200;
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    let redButterflyCount = 0;
+  
+    function butterflyClicked() {
+      redButterflyCount++; 
+  
+      if (redButterflyCount >= 1) {
+        window.location.href = 'beast.html'; 
+      }
+    }
+
+    document.querySelectorAll('.flyingPink').forEach(butterfly => {
+      butterfly.addEventListener('click', butterflyClicked);
+    });
+  });
+  
 
 for (var i = 0; i < butterflyCount; i++) {
   var ypos = Math.round(Math.random() * height);
@@ -49,10 +66,10 @@ for (var j = 0; j < pinkButterflyCount; j++) {
   var createButterflyPink = document.createElement("div");
   createButterflyPink.innerHTML = pinkButterfly.outerHTML;
 
-  var speedPink = 1000 * (Math.random() * maxTimePink + 1);
+  var speedPink = 1500 * (Math.random() * maxTimePink + 1);
   createButterflyPink.setAttribute("class", "createbutterflyPink" + (3 - Math.floor(speedPink / 1000 / 8)));
 
-  var speedDelayPink = 20000;
+  var speedDelayPink = 50000;
 
   butterflies.appendChild(createButterflyPink);
   createButterflyPink.animate(
@@ -72,3 +89,5 @@ for (var j = 0; j < pinkButterflyCount; j++) {
     }
   );
 }
+
+
