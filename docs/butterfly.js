@@ -15,13 +15,22 @@ var pinkButterflyCount = 200;
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let redButterflyCount = 0;
-  
-    function butterflyClicked() {
-      redButterflyCount++; 
-  
-      if (redButterflyCount >= 1) {
-        window.location.href = 'beast.html'; 
+    const countdownElement = document.getElementById('countdown');
+    const totalClicksNeeded = 3;
+    countdownElement.textContent = totalClicksNeeded;
+
+    function updateCountdown() {
+        const clicksLeft = totalClicksNeeded - redButterflyCount;
+        countdownElement.textContent = clicksLeft;
+    
+        if (clicksLeft <= 0) {
+          window.location.href = 'beast.html'; 
+        }
       }
+
+    function butterflyClicked() {
+        redButterflyCount++; 
+        updateCountdown(); 
     }
 
     document.querySelectorAll('.flyingPink').forEach(butterfly => {
