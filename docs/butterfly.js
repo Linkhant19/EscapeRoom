@@ -11,7 +11,7 @@ var width = w.innerWidth || e.clientWidth || g.clientWidth;
 var height = w.innerHeight || e.clientHeight || g.clientHeight;
 var initialTop = butterflies.clientHeight * -1;
 var butterflyCount = 300;
-var pinkButterflyCount = 200;
+var pinkButterflyCount = 300;
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let redButterflyCount = 0;
@@ -75,10 +75,10 @@ for (var j = 0; j < pinkButterflyCount; j++) {
   var createButterflyPink = document.createElement("div");
   createButterflyPink.innerHTML = pinkButterfly.outerHTML;
 
-  var speedPink = 1500 * (Math.random() * maxTimePink + 1);
+  var speedPink = 1400 * (Math.random() * maxTimePink + 1);
   createButterflyPink.setAttribute("class", "createbutterflyPink" + (3 - Math.floor(speedPink / 1000 / 8)));
 
-  var speedDelayPink = 50000;
+  var speedDelayPink = 70000;
 
   butterflies.appendChild(createButterflyPink);
   createButterflyPink.animate(
