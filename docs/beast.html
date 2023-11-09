@@ -21,36 +21,41 @@
 
         body {
             font-family: 'Courier New', monospace;
-            background-color: #4d3924;
-            color: #222;
+            background-color: black;
+            color: maroon;
             position: relative;
+            max-height: relative;
             overflow-x: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: relative;
             padding: 0;
             margin: 0;
-            animation: subtleMove 5s infinite;
-            background-image: url('noise.png'), linear-gradient(45deg, #4d3930, #211b11, #344a72);
+            background-image: url('spider.webp'), linear-gradient(45deg, white, white, white);
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: small; 
+            /* animation: subtleMove 5s infinite; */
         }
 
         .content {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
+            background-color: tan;
+            border: 1px solid black;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             max-width: 800px;
+            max-height: relative;
             padding: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             transform: translateY(0);
             
-            background-image: url('torn.png');  
-            background-position: top;
+            background-image: url('rough.png');  
+            background-position: center;
             background-repeat: no-repeat;
-            background-size: 100% auto;
+            background-size: 150%;
             position: relative;
             opacity: 0;
-            animation: fadeIn 5s forwards 2s;
+            animation: fadeIn 3s forwards 1.5s;
         }
 
         @keyframes fadeIn {
@@ -68,26 +73,6 @@
             }
         }
 
-        /* @keyframes slideIn {
-            to {
-                left: 0;
-            }
-        } */
-
-        /* @keyframes combinedAnimation {
-            0% {
-                opacity: 0;
-                left: 100%; 
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 1;
-                left: 0;
-            }
-        } */
-
         .content:hover {
             transform: translateY(-10px) rotate(-1deg);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px 5px rgba(255, 255, 0, 0.2);
@@ -102,7 +87,7 @@
             top: 10px;
             right: 10px;
             font-size: 40px;
-            color: #555;
+            color: black;
         }
 
         h1, h2 {
@@ -134,24 +119,26 @@
 
     <div class="content">
         <i class="fas fa-paperclip paperclip"></i>
-        <h1>Secret Lab Incident Report</h1>
-        <h2>Introduction</h2>
-        <p>This file contains a detailed report...</p>
+        <h1>Secret Lab Incident Report!</h1>
+        <h2>THE BEAST IN THE HALLWAY</h2>
+        <p>This file contains a detailed report of the beast seen in the hallway of the lab.</p>
 
-        <h2>Incident Report</h2>
-        <p>On [DATE] at approximately [TIME]...</p>
+        <h2>Incident Time</h2>
+        <p>On December 2, 2023 at approximately 7 p.m.</p>
 
-        <h2>Photo</h2>
+        <h2>Photo Estimate of the Beast</h2>
         <img src="beast.jpg" alt="The Beast">
 
         <h2>Witness Statements</h2>
-        <p>Dr. John Doe: "I was working late that night..."</p>
+        <p>Dr. Lin Ko: "I was working late that night and when I left my lab, I saw a shawdow in the corner of my eyes.
+            That's when I turned around and saw that thing standing in the hallway. Before I could even scream, it charged at met
+            at full speed. I was TERRIFIED. I ran into an empty room, locked the door, and called for help."</p>
 
-        <h2>Conclusion</h2>
-        <p>Further investigation is required...</p>
+        <!-- <h2>Conclusion</h2>
+        <p>Further investigation is required...</p> -->
 
         <footer>
-            <p>FILE ID: SL-2389-X</p>
+            <p>FILE ID: SA-1912-GN</p>
             <p>AUTHORIZED ACCESS ONLY</p>
         </footer>
     </div>
