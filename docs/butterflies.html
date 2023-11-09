@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Lab File: The Beast in the Hallway</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        @keyframes pulse {
+            0% {
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.2;
+            }
+            100% {
+                opacity: 0.1;
+            }
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: #004e64;
+            position: relative;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 800px;
+            padding: 0;
+            margin: 0;
+            background-image: url('bflying.gif'), linear-gradient(45deg, white, white, white);
+            background-repeat: no-repeat; 
+            background-position: center; 
+            background-size: small; 
+            /* animation: subtleMove 5s infinite; */
+        }
+
+        .content {
+            background-color: #9fffcb;
+            border: 1px solid black;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            max-height: relative;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: translateY(0);
+            
+            background-image: url('butterflies.png');  
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 75%;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 3s forwards 1.5s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes subtleMove {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .content:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px 5px rgba(255, 255, 0, 0.2);
+        }
+
+        .content:active {
+            transform: translateY(5px) rotate(-1deg); 
+        }
+
+        .paperclip {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 40px;
+            color: black;
+        }
+
+        h1, h2 {
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+        }
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 100px;
+            animation: pulse 2s infinite;
+            z-index: -1;
+            white-space: nowrap;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false;" onkeydown="if (event.keyCode == 80 && event.ctrlKey) alert('Printing is prohibited!')">
+    <div class="watermark">CONFIDENTIAL</div>
+
+    <div class="content">
+        <i class="fas fa-paperclip paperclip"></i>
+        <h1>BUTTERFLIES SEASON!</h1>
+        <h2>NEW HOTTEST ITEM ON SALE</h2>
+        <p>Our hottest item of the week is... the butterfly nets!
+            They are selling out faster than every other item in shop. It must be because of the butterfly season.
+        </p>
+
+        <h2>Butterfly Net</h2>
+        <p>$26.98   Sold Out</p>
+
+        <!-- <h2>Photo Estimate of the Beast</h2>
+        <img src="snowtrees.png" alt="The Beast"> -->
+
+        <h2>Interview with a customer</h2>
+        <p>Charlie (28 years old): "I wanted to buy butterfly nets for my girlfriend's daughter because she loves collecting dead animals, but 
+            they are all sold out! Who is buying them all?! It is so frustrating."</p>
+
+        <footer>
+            <p>BOSTON UNIVERSITY JOURNAL</p>
+            <p>DECEMBER 1, 2023</p>
+        </footer>
+    </div>
+
+    <script>
+        document.body.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('This document is confidential. No copying allowed!');
+        });
+    </script>
+</body>
+
+</html>
