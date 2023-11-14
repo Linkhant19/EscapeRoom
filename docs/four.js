@@ -21,6 +21,7 @@ let typingTimer;
 let index = 0;
 const text1 = "725 Commonwealth Avenue, Boston";
 const text2 = "That is where we will meet.";
+let button = 0;
 
 function typeText(targetElementId, message, callback) {
     const targetElement = document.getElementById(targetElementId);
@@ -32,7 +33,12 @@ function typeText(targetElementId, message, callback) {
     } else {
         index = 0;
         if (callback) callback();
+        if (targetElementId === 'meetOutput') {
+            const nextButton = document.querySelector('.next-button');
+            nextButton.classList.add('active');
+        }
     }
+    button = 1;
 }
 
 function checkAnswer() {
@@ -100,3 +106,18 @@ function checkAnswer() {
     feedbackElement.style.color = feedbackColor;
     feedbackElement.style.fontSize = feedbackFontSize;
 }
+
+function goToNextPage() {
+    window.location.href = "butterflies.html";  
+}
+
+// const typedOutput = document.querySelector('.typed-output');
+// typedOutput.addEventListener('animationend', () => {
+//     const nextButton = document.querySelector('.next-button');
+//     nextButton.classList.add('active');
+// });
+
+// if (button == 1) {
+//     const nextButton = document.querySelector('.next-button');
+//     nextButton.classList.add('active');
+// }
