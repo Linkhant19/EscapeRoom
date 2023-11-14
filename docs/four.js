@@ -19,7 +19,7 @@
 
 let typingTimer;
 let index = 0;
-const text1 = "725 Commonwealth Avenue, Boston, MA";
+const text1 = "725 Commonwealth Avenue, Boston";
 const text2 = "That is where we will meet.";
 
 function typeText(targetElementId, message, callback) {
@@ -48,9 +48,9 @@ function checkAnswer() {
     let feedbackFontSize = "";
 
     if (enteredNumber === 725) {
-        document.getElementById('typedOutput').style.width = "500px"; 
+        document.getElementById('typedOutput').style.width = "400px"; 
         typeText('typedOutput', text1, function() {
-            document.getElementById('meetOutput').style.width = "500px"; 
+            document.getElementById('meetOutput').style.width = "400px"; 
             typeText('meetOutput', text2);
         });
         // typeText();
