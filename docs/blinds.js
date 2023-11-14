@@ -6,8 +6,12 @@ function checkAnswer() {
     const input = document.getElementById('answer-input');
     const feedback = document.getElementById('feedback');
     if (input.value.toLowerCase() === 'cloud') {
-        feedback.textContent = "Correct!";
+        goToNextPage();
     } else {
         feedback.textContent = "Try again.";
     }
+}
+
+function goToNextPage() {
+    window.location.href = "bftransition.html";  
 }
