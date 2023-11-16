@@ -108,7 +108,7 @@ function checkAnswer() {
 }
 
 function goToNextPage() {
-    window.location.href = "butterflies.html";  
+    window.location.href = "loadingblood.html";  
 }
 
 // const typedOutput = document.querySelector('.typed-output');

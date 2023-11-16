@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var butterflies = document.querySelectorAll('.bf');
-    var delayIncrement = 2000; 
-    var redirectDelay = butterflies.length * delayIncrement + 2000; 
+    var delayIncrement = 1000; 
+    var redirectDelay = butterflies.length * delayIncrement; 
 
     butterflies.forEach(function(butterfly, index) {
         setTimeout(function() {
@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     setTimeout(function() {
-        window.location.href = "beast.html"; 
+        window.location.href = "butterflies.html"; 
     }, redirectDelay);
 });

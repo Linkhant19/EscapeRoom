@@ -110,6 +110,23 @@
             display: block;
             margin: 20px auto;
         }
+
+        #nextPageButton {
+            font-family: 'Georgia', serif;
+            padding: 10px 20px;
+            background-color: #004e64; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; 
+            transition: background-color 0.3s ease;
+        }
+
+        #nextPageButton:hover {
+            background-color: #063744; 
+        }
+
     </style>
 </head>
 
@@ -133,7 +150,7 @@
         <h2>Interview with a customer</h2>
         <p>Charlie (28 years old): "I wanted to buy butterfly nets for my girlfriend's daughter because she loves collecting dead animals, but 
             they are all sold out! Who is buying them all?! It is so frustrating."</p>
-
+            <button id="nextPageButton" onclick="goToNextPage()">Continue...</button>
         <footer>
             <p>BOSTON UNIVERSITY JOURNAL</p>
             <p>DECEMBER 1, 2023</p>
@@ -145,6 +162,9 @@
             e.preventDefault();
             alert('This document is confidential. No copying allowed!');
         });
+        function goToNextPage() {
+            window.location.href = 'loading2.html';
+        }
     </script>
 </body>
 
