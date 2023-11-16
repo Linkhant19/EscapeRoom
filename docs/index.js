@@ -18,7 +18,7 @@ function showButton() {
 }
 
 function goToNextPage() {
-    window.location.href = 'three.html';
+    window.location.href = 'loading.html';
 }
 
 setInterval(glitch, 50); 
