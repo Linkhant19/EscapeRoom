@@ -13,5 +13,5 @@ function checkAnswer() {
 }
 
 function goToNextPage() {
-    window.location.href = "loadingblood.html";  
+    window.location.href = "loading1.html";  
 }
