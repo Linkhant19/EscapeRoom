@@ -111,6 +111,23 @@
             display: block;
             margin: 20px auto;
         }
+
+        #nextPageButton {
+            font-family: 'Georgia', serif;
+            padding: 10px 20px;
+            background-color: maroon; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; 
+            transition: background-color 0.3s ease;
+        }
+
+        #nextPageButton:hover {
+            background-color: darkred; 
+        }
+
     </style>
 </head>
 
@@ -136,7 +153,7 @@
 
         <!-- <h2>Conclusion</h2>
         <p>Further investigation is required...</p> -->
-
+        <button id="nextPageButton" onclick="goToNextPage()">Continue...</button>
         <footer>
             <p>FILE ID: SA-1912-GN</p>
             <p>AUTHORIZED ACCESS ONLY</p>
@@ -148,6 +165,9 @@
             e.preventDefault();
             alert('This document is confidential. No copying allowed!');
         });
+        function goToNextPage() {
+            window.location.href = 'loading2.html';
+        }
     </script>
 </body>
 
