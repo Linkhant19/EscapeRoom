@@ -108,7 +108,7 @@ function checkAnswer() {
 }
 
 function goToNextPage() {
-    window.location.href = "loadingblood.html";  
+    window.location.href = "bftransition.html";  
 }
 
 // const typedOutput = document.querySelector('.typed-output');

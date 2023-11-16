@@ -121,6 +121,23 @@
             display: block;
             margin: 20px auto;
         }
+
+        #nextPageButton {
+            font-family: 'Georgia', serif;
+            padding: 10px 20px;
+            background-color: #dd5341; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; 
+            transition: background-color 0.3s ease;
+        }
+
+        #nextPageButton:hover {
+            background-color: #a33d2f; 
+        }
+
     </style>
 </head>
 
@@ -140,7 +157,7 @@
         <h2>Colors of the stars</h2>
         <p>Maroon, Purple, Navy, Peach</p>
 
-
+        <button id="nextPageButton" onclick="goToNextPage()">Continue...</button>
     </div>
 
     <script>
@@ -148,6 +165,9 @@
             e.preventDefault();
             alert('This document is confidential. No copying allowed!');
         });
+        function goToNextPage() {
+            window.location.href = 'loadingbeast.html';
+        }
     </script>
 </body>
 
