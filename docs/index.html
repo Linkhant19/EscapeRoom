@@ -152,11 +152,11 @@
         }
 
         .glitch-text::before {
-            animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
         }
 
         .glitch-text::after {
-            animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
         }
 
         @keyframes glitch-anim-1 {
@@ -236,8 +236,9 @@
 <body>
     <div class="container">
         <div class="content">
-            <p class="glitch-text" id="glitchText">Welcome to #####</p>
+            <p class="glitch-text" data-text="Welcome to BGC Inc." id="glitchText">Welcome to #####</p>
         </div>
+        <button class="next-button" id="nextButton">Next</button>
     </div>
     <script src="index.js">
     </script>

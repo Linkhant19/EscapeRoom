@@ -12,4 +12,4 @@ function glitch() {
     glitchText.textContent = displayText;
 }
 
-setInterval(glitch, 100); 
+setInterval(glitch, 50); 
